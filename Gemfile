@@ -68,3 +68,5 @@ gem 'html2slim'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'devise'
+gem 'carrierwave'
+gem "mini_magick"
