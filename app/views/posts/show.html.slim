@@ -21,6 +21,8 @@ div.col-md-10.col-md-offset-1.mx-auto.postShow-wrap
               = @post.caption
           div.comment-post-id
             div.m-2
+              div [id="comment-post-<%= @post.id.to_s %>"]
+                = render 'comment_list', post: @post
         div.row.parts
           div [id="like-icon-post-<%= @post.id.to_s %>"]
             - if @post.liked_by(current_user).present?
@@ -34,3 +36,8 @@ div.col-md-10.col-md-offset-1.mx-auto.postShow-wrap
           = time_ago_in_words(@post.created_at).upcase
             | 前
         <hr>
+        div.row.parts [id="comment-form-post-<%= @post.id.to_s %>"]
+          = form_with model: [@post, Comment.new],  class: "w-100" do |f|
+            = f.hidden_field :user_id, value: current_user.id
+            = f.hidden_field :post_id, value: @post.id
+            = f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off
