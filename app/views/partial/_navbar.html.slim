@@ -9,3 +9,5 @@ nav.navbar.navbar-expand-lg.navbar-light
           = link_to "投稿", new_post_path, class: "btn btn-primary"
         li
           = link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon"
+        li
+          = link_to "サインアウト", destroy_user_session_path, method: :delete, class: "nav-link"

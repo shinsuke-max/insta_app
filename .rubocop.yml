@@ -13,3 +13,6 @@ AllCops:
     - 'lib/tasks/*'
     - 'vendor/**/*'
     - 'path/ruby'
+    - 'app/uploaders/image_uploader.rb'
+    - 'app/controllers/posts_controller.rb'
+    - 'spec/**/*'
