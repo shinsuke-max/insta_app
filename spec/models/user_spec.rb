@@ -14,8 +14,32 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
-  # 名がなければ無効な状態であること it "is invalid without a first name"
-  # 姓がなければ無効な状態であること it "is invalid without a last name"
-  # メールアドレスがなければ無効な状態であること it "is invalid without an email address"
-  # 重複したメールアドレスなら無効な状態であること it "is invalid with a duplicate email address"
+  # 名がなければ無効な状態であること
+  it "is invalid without name" do
+    user = User.new(name: nil)
+    user.valid?
+    expect(user).to_not be_valid
+  end
+
+  # メールアドレスがなければ無効な状態であること
+  it "is invalid without an email address" do
+    user = User.new(email: nil)
+    user.valid?
+    expect(user).to_not be_valid
+  end
+  # 重複したメールアドレスなら無効な状態であること
+  it "is invalid with a duplicate email address" do
+    User.create(
+      name: "tt",
+      email: "hoge@example.com",
+      password: "password",
+    )
+    user = User.new(
+      name: "ts",
+      email: "hoge@example.com",
+      password: "password",
+    )
+    user.valid?
+    expect(user).to_not be_valid
+  end
 end
