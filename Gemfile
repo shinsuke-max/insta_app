@@ -44,6 +44,14 @@ group :development, :test do
   gem 'byebug', platforms: %i(mri mingw x64_mingw)
   gem 'rubocop-airbnb'
   gem "factory_bot_rails"
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+end
+
+group :production, :staging do
+  gem 'unicorn'
 end
 
 group :development do
