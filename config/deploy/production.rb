@@ -7,10 +7,10 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server '18.178.123.23', user: 'shinsuke', roles: %w{app db web} 
+server '18.178.123.23', user: 'shinsuke', roles: %w{app db web}
 
 #デプロイするサーバーにsshログインする鍵の情報を記述
-set :ssh_options, keys: '~/.ssh/first_aws_rsa'
+set :ssh_options, keys: '~/.ssh/instaapp_key_rsa'
 
 
 # role-based syntax
