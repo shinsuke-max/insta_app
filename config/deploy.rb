@@ -1,5 +1,5 @@
 # capistranoのバージョン固定
-lock '3.12.1'
+lock '3.13.0'
 
 # デプロイするアプリケーション名
 set :application, 'insta_app'
@@ -11,7 +11,7 @@ set :repo_url, 'git@github.com:shinsuke-max/insta_app.git'
 set :branch, 'master'
 
 # deploy先のディレクトリ。
-set :deploy_to, '/var/www/rails/insta_app'
+set :deploy_to, '/var/www/insta_app'
 
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
