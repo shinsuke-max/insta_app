@@ -1,19 +1,20 @@
-version: '3'
+version: '3' # バージョンを指定
 services:
-  db:
-    image: mysql:5.7
+  db: # データベースサーバ用のコンテナの設定を記述
+    image: mysql:5.7 # コンテナで使用するイメージ名を記述します。
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: root
+      MYSQL_ROOT_PASSWORD: password # 任意のパスワードを設定
+      MYSQL_DATABASE: root # 任意のデータベース名を設定
     ports:
-      - "3306:3306"
+      - "3306:3306" # ホストの3306ポートとコンテナの3306ポートを接続します。
 
-  web:
-    build: .
-    command: rails s -p 3000 -b '0.0.0.0'
+  web: # アプリケーションサーバ用のコンテナの設定を記述
+    build: . # docker-compose.ymlと同じ階層にあるDockerfileを使ってイメージをビルドするための記述です。
+    command: bundle exec rails s -p 3000 -b '0.0.0.0' # コンテナ立ち上げ時に起動するコマンドです。railsを実行します。
+
     volumes:
-      - .:/app_name
+      - .:/app_name # 作業ディレクトリをコンテナ内の/app_nameにマウントします。
     ports:
-      - "3000:3000"
+      - "3000:3000" # ホストの3000ポートとコンテナの3000ポートを接続します。
     links:
-      - db
+      - db # dbコンテナとの接続を記述します。
