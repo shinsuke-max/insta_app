@@ -18,3 +18,8 @@ services:
       - "3000:3000" # ホストの3000ポートとコンテナの3000ポートを接続します。
     links:
       - db # dbコンテナとの接続を記述します。
+      - chrome
+  chrome:
+    image: selenium/standalone-chrome:3.141.59-dubnium
+    ports:
+      - 4444:4444
