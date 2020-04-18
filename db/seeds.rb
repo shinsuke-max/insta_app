@@ -1,4 +1,4 @@
-User.create!(name: "テストユーザー",
+User.create!(name: "testuser",
              email: "test@insta.org",
              password: "testtest",
              password_confirmation: "testtest")
