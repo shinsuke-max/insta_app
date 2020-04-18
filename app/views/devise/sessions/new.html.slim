@@ -1,3 +1,4 @@
+- provide(:title, 'サインイン')
 div.main
   div.card.devise-card
     div.form-wrap
@@ -11,6 +12,7 @@ div.main
           = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control"
         div.actions
           = f.submit "サインインする", class: "btn btn-primary w-100"
+        = render 'devise/sessions/testuser'
       br
 
       p.devise-link

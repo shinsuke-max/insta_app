@@ -1,0 +1,6 @@
+= form_with scope: resource, as: resource_name, url: session_path(resource_name), local: true do |f|
+  div.form-group
+    = f.hidden_field :email ,value: "test@insta.org"
+    = f.hidden_field :password ,value: "testtest"
+  div.actions
+    = f.submit "かんたんログイン（テスト用）", class: "btn btn-primary w-100"

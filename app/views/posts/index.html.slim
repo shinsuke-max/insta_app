@@ -1,3 +1,18 @@
+- provide(:title, '投稿一覧')
+
+h1.mt-3.mb-3 検索
+= search_form_for @q, class: 'mb-5' do |f|
+  .form-group.row
+    = f.label :caption_cont, 'キャプション', class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      = f.search_field :caption_cont, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-outline-primary'
+
+.mb-3
+  = paginate @posts
+  = page_entries_info @posts
+  
 - @posts.each do |post|
   .col-md-8.col-md-2.mx-auto
     .card-wrap
@@ -27,7 +42,7 @@
           div
             span
               strong= post.user.name
-            span.mr-2= post.caption
+            span.mr-2.ml-2= post.caption
             = link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post), class: "post-time no-text-decoration"
             div [id="comment-post-<%= post.id.to_s %>"]
               = render 'comment_list', { post: post }
