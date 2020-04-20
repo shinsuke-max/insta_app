@@ -5,7 +5,7 @@ div.col-md-offset-2.mb-4.edit-profile-wrapper
       div.profile-form-wrap
         = form_with scope: resource, as: resource_name, url: registration_path(resource_name), local: true, method: :patch do |f|
           div.form-group
-            = f.label :name, "名前"
+            = f.label :name, "フルネーム"
             = f.text_field :name, autofocus: true, class: "form-control"
           div.form-group
             = f.label :email, "メールアドレス"

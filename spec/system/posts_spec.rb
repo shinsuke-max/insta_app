@@ -18,20 +18,4 @@ RSpec.describe "Posts", type: :system do
       expect(page).to have_content "testtesttest"
     end.to change(user.posts, :count).by(1)
   end
-
-  #scenario "user delete a post" do
-  #let(:taxonomy) { create(:taxonomy, name: "Categories") }
-  #let(:user) { create(:user)}
-  #  user = FactoryBot.create(:user)
-  #  post = FactoryBot.create(:post, user: user)
-  #  photo = FactoryBot.create(:photo, post: post)
-  #
-  #  visit new_user_session_path
-  #  fill_in "メールアドレス", with: user.email
-  #  fill_in "パスワード", with: user.password
-  #  click_button "サインインする"
-  #  visit root_path
-  #
-  #  expect
-  #end
 end
