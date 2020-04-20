@@ -1,5 +1,5 @@
 # インスタグラムのクローンアプリです
-# URL
+# URL https://insta-app0331.herokuapp.com/
 
 # 言語・使用技術
 #### フロント
@@ -13,14 +13,14 @@
 - Ruby on Rails 5.2.3
 
 #### サーバー
-- Nginx 1.16.1
+- Nginx 1.16.1(aws)
 
 #### DB
 - MySQL 5.7
 
 #### インフラ・開発環境等
 - Docker/docker-compose
-- AWS（VPC, EC2, S3）
+- AWS（VPC, EC2）
 - Capistrano3
 - RSpec
 
@@ -29,11 +29,9 @@
   - deviseを使用
   - 新規登録・ログイン・ログアウト機能
   - マイページ・登録情報編集機能
-- 記事投稿機能
 - 画像投稿機能
-  - active_storageを使用
-  - 複数枚投稿可
 - コメント機能
 - 検索機能
   - ransackを使用
 - ページネーション機能
+  - kaminariを使用
