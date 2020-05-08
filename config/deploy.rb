@@ -5,7 +5,7 @@ lock '3.13.0'
 set :application, 'insta_app'
 
 # cloneするgitのレポジトリ
-set :repo_url, 'git@github.com:shinsuke-max/insta_app.git'
+set :repo_url, 'git@github.com:shinsuke-max/nature-picture-1.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, 'master'
