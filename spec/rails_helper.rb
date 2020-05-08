@@ -64,6 +64,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include FactoryBot::Syntax::Methods
 end
 
 Capybara.server_host = Socket.ip_address_list.detect{|addr| addr.ipv4_private?}.ip_address

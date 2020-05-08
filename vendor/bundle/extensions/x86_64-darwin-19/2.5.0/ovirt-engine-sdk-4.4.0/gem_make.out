@@ -1,0 +1,42 @@
+current directory: /Users/satoshinsuke/workspace/rails/insta_app/vendor/bundle/gems/ovirt-engine-sdk-4.4.0/ext/ovirtsdk4c
+/Users/satoshinsuke/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200508-37747-1ceflb2.rb extconf.rb
+checking for xml2-config... yes
+checking for curl-config... yes
+creating Makefile
+
+current directory: /Users/satoshinsuke/workspace/rails/insta_app/vendor/bundle/gems/ovirt-engine-sdk-4.4.0/ext/ovirtsdk4c
+make "DESTDIR=" clean
+
+current directory: /Users/satoshinsuke/workspace/rails/insta_app/vendor/bundle/gems/ovirt-engine-sdk-4.4.0/ext/ovirtsdk4c
+make "DESTDIR="
+compiling ov_error.c
+compiling ov_http_client.c
+ov_http_client.c:392:33: warning: comparison of integers of different signs: 'long' and 'size_t' (aka 'unsigned long') [-Wsign-compare]
+        while (pointer - buffer < length && isspace(*pointer)) {
+               ~~~~~~~~~~~~~~~~ ^ ~~~~~~
+ov_http_client.c:651:18: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    ptr->limit = connections;
+               ~ ^~~~~~~~~~~
+ov_http_client.c:845:71: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    context_ptr->code = curl_multi_wait(context_ptr->handle, NULL, 0, timeout, NULL);
+                        ~~~~~~~~~~~~~~~                               ^~~~~~~
+ov_http_client.c:1092:34: warning: comparison of integers of different signs: 'unsigned long' and 'int' [-Wsign-compare]
+    if (RHASH_SIZE(ptr->pending) < ptr->limit) {
+        ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+ov_http_client.c:1118:71: warning: comparison of integers of different signs: 'unsigned long' and 'int' [-Wsign-compare]
+        while (RARRAY_LEN(ptr->queue) > 0 && RHASH_SIZE(ptr->pending) < ptr->limit) {
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+5 warnings generated.
+compiling ov_http_request.c
+compiling ov_http_response.c
+compiling ov_http_transfer.c
+compiling ov_module.c
+compiling ov_string.c
+compiling ov_xml_reader.c
+ov_xml_reader.c:24:10: fatal error: 'libxml/xmlreader.h' file not found
+#include <libxml/xmlreader.h>
+         ^~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make: *** [ov_xml_reader.o] Error 1
+
+make failed, exit code 2

@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Posts", type: :system do
+  let(:user) { create(:user, name: "sato", email: "papapa@example.com", password: "password") }
   scenario "user creates a new post" do
-    user = FactoryBot.create(:user)
-
     visit new_user_session_path
     fill_in "メールアドレス", with: user.email
     fill_in "パスワード", with: user.password
