@@ -60,4 +60,3 @@ production:
   database: insta_app_production
   username: root
   password:
-  socket: /var/lib/mysql/mysql.sock

@@ -93,3 +93,4 @@ gem 'faker'
 gem 'kaminari'
 gem 'ransack'
 gem 'aws-sdk-s3',              '1.46.0', require: false
+gem 'webpacker', github: 'rails/webpacker'
