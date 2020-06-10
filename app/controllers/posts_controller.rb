@@ -11,15 +11,14 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.photos.build
   end
 
   def show; end
 
   def create
     @post = Post.new(post_params)
-    if @post.photos.present?
-      @post.save!
+    @post.image.attach(params[:post][:image])
+    if @post.save
       redirect_to root_path
       flash[:notice] = '投稿が保存されました'
     else
@@ -40,7 +39,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:caption, photos_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:post).permit(:caption, :image).merge(user_id: current_user.id)
   end
 
   def set_post

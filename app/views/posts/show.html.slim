@@ -3,7 +3,9 @@ div.col-md-10.col-md-offset-1.mx-auto.postShow-wrap
   div.row.post-wrap
     div.col-md-8
       div.card-left
-        = image_tag @post.photos.first.image.url(:medium), class: "card-img-top"
+        = image_tag @post.image, class: "card-img-top"
+        <!-- = image_tag post.image.variant(resize: "709x709") if post.image.attached? -->
+
     div.col-md-4
       div.card-right
         div.card-right-comment
@@ -20,25 +22,3 @@ div.col-md-10.col-md-offset-1.mx-auto.postShow-wrap
           div.m-2
             strong
               = @post.caption
-          div.comment-post-id
-            div.m-2
-              div [id="comment-post-<%= @post.id.to_s %>"]
-                = render 'comment_list', post: @post
-        div.row.parts
-          div [id="like-icon-post-<%= @post.id.to_s %>"]
-            - if @post.liked_by(current_user).present?
-              = link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text"
-            - else
-              = link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text"
-
-        div [id="like-text-post-<%= @post.id.to_s %>"]
-          = render "like_text", { likes: @post.likes }
-        div.post-time
-          = time_ago_in_words(@post.created_at).upcase
-            | 前
-        <hr>
-        div.row.parts [id="comment-form-post-<%= @post.id.to_s %>"]
-          = form_with model: [@post, Comment.new],  class: "w-100" do |f|
-            = f.hidden_field :user_id, value: current_user.id
-            = f.hidden_field :post_id, value: @post.id
-            = f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off
