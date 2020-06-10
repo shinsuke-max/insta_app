@@ -52,11 +52,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-
-production:
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  database: insta_app_production
-  username: root
-  password:
