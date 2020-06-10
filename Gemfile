@@ -83,14 +83,15 @@ end
 gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
 
 gem 'bootstrap'
-gem 'carrierwave'
 gem 'devise'
 gem 'html2slim'
 gem 'jquery-rails'
 gem 'mini_magick'
+gem 'image_processing'
 gem 'slim-rails'
 gem 'faker'
 gem 'kaminari'
 gem 'ransack'
 gem 'aws-sdk-s3',              '1.46.0', require: false
 gem 'webpacker', github: 'rails/webpacker'
+gem 'active_storage_validations', '0.8.2'
